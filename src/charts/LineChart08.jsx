@@ -1,28 +1,38 @@
-import React, { useRef, useEffect } from 'react';
+import React, { useRef, useEffect } from "react";
 
 import {
-  Chart, LineController, LineElement, Filler, PointElement, LinearScale, TimeScale, Tooltip,
-} from 'chart.js';
-import 'chartjs-adapter-moment';
+  Chart,
+  LineController,
+  LineElement,
+  Filler,
+  PointElement,
+  LinearScale,
+  TimeScale,
+  Tooltip,
+} from "chart.js";
+import "chartjs-adapter-moment";
 
 // Import utilities
-import { formatValue } from '../utils/Utils';
+import { formatValue } from "../utils/Utils";
 
-Chart.register(LineController, LineElement, Filler, PointElement, LinearScale, TimeScale, Tooltip);
+Chart.register(
+  LineController,
+  LineElement,
+  Filler,
+  PointElement,
+  LinearScale,
+  TimeScale,
+  Tooltip
+);
 
-function LineChart08({
-  data,
-  width,
-  height
-}) {
-
+function LineChart08({ data, width, height }) {
   const canvas = useRef(null);
 
   useEffect(() => {
     const ctx = canvas.current;
     // eslint-disable-next-line no-unused-vars
     const chart = new Chart(ctx, {
-      type: 'line',
+      type: "line",
       data: data,
       options: {
         layout: {
@@ -46,10 +56,10 @@ function LineChart08({
             },
           },
           x: {
-            type: 'time',
+            type: "time",
             time: {
-              parser: 'MM-DD-YYYY',
-              unit: 'month',
+              parser: "MM-DD-YYYY",
+              unit: "month",
             },
             display: false,
           },
@@ -67,7 +77,7 @@ function LineChart08({
         },
         interaction: {
           intersect: false,
-          mode: 'nearest',
+          mode: "nearest",
         },
         maintainAspectRatio: false,
       },
@@ -76,9 +86,7 @@ function LineChart08({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  return (
-    <canvas ref={canvas} width={width} height={height}></canvas>
-  );
+  return <canvas ref={canvas} width={width} height={height}></canvas>;
 }
 
 export default LineChart08;

@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import { Routes, Route, useLocation } from "react-router-dom";
+import { CopyBlock, dracula } from "react-code-blocks";
 
 import "./css/style.scss";
 

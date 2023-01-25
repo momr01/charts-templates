@@ -1,5 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 import LineChart from '../../charts/LineChart09';
+import { lineChart9 } from '../../codes/lineCharts';
+import BtnShowCode from '../../components/BtnShowCode';
 
 // Import utilities
 import { tailwindConfig } from '../../utils/Utils';
@@ -94,6 +96,8 @@ function FintechCard14() {
   miniCharts.map((miniChart) => {
     chartData.push(buildChartData(miniChart));
   });
+
+  const [showCode, setShowCode] = useState(false);
 
   return (
     <div className="col-span-full bg-white shadow-lg rounded-sm border border-slate-200">
@@ -306,6 +310,11 @@ function FintechCard14() {
           </table>
         </div>
       </div>
+      <BtnShowCode
+          showCode={showCode}
+          setShowCode={setShowCode}
+          text={lineChart9}
+        />
     </div>
   );
 }

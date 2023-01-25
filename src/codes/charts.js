@@ -2,7 +2,6 @@ export const salesVSRefunds = `
 import Tooltip from "../../components/Tooltip";
 import BarChart from "../../charts/BarChart02";
 
-// Import utilities
 import { tailwindConfig } from "../../utils/Utils";
 
 function SalesVSRefunds() {
@@ -16,7 +15,6 @@ function SalesVSRefunds() {
       "05-01-2021",
     ],
     datasets: [
-      // Light blue bars
       {
         label: "Stack 1",
         data: [6200, 9200, 6600, 8800, 5200, 9200],
@@ -25,7 +23,6 @@ function SalesVSRefunds() {
         barPercentage: 0.66,
         categoryPercentage: 0.66,
       },
-      // Blue bars
       {
         label: "Stack 2",
         data: [-4000, -2600, -5350, -4000, -7500, -2000],
@@ -56,9 +53,7 @@ function SalesVSRefunds() {
           </div>
         </div>
       </div>
-      {/* Chart built with Chart.js 3 */}
       <div className="grow">
-        {/* Change the height attribute to adjust the chart height */}
         <BarChart data={chartData} width={595} height={248} />
       </div>
     </div>
