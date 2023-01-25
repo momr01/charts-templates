@@ -11,3 +11,12 @@
 @import 'additional-styles/theme.scss';
 
 @tailwind utilities;
+
+@layer base {
+    .section_shadow {
+        // -webkit-box-shadow: -1px 5px 14px 4px rgba(0, 0, 0, 0.68);
+        // box-shadow: -1px 5px 14px 4px rgba(0, 0, 0, 0.68);
+        -webkit-box-shadow: -1px 5px 19px 4px rgba(0, 0, 0, 0.46);
+        box-shadow: -1px 5px 19px 4px rgba(0, 0, 0, 0.46);
+    }
+}

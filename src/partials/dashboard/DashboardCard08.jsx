@@ -1,5 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 import LineChart from "../../charts/LineChart02";
+import { lineChart2 } from "../../codes/lineCharts";
+import BtnShowCode from "../../components/BtnShowCode";
 
 // Import utilities
 import { tailwindConfig } from "../../utils/Utils";
@@ -86,8 +88,14 @@ function DashboardCard08() {
     ],
   };
 
+  const [showCode, setShowCode] = useState(false);
+
   return (
-    <div className="flex flex-col col-span-12 md:col-span-8 bg-white shadow-lg rounded-sm border border-slate-200">
+    <div
+      className={`flex flex-col col-span-12 md:col-span-6 bg-white shadow-lg rounded-sm border border-slate-200 ${
+        !showCode && "h-[28rem]"
+      }`}
+    >
       <header className="px-5 py-4 border-b border-slate-100 flex items-center">
         <h2 className="font-semibold text-slate-800">
           Sales Over Time (all stores)
@@ -95,7 +103,15 @@ function DashboardCard08() {
       </header>
       {/* Chart built with Chart.js 3 */}
       {/* Change the height attribute to adjust the chart height */}
-      <LineChart data={chartData} width={595} height={248} />
+      <div className="p-1">
+        <LineChart data={chartData} width={595} height={248} />
+
+        <BtnShowCode
+          showCode={showCode}
+          setShowCode={setShowCode}
+          text={lineChart2}
+        />
+      </div>
     </div>
   );
 }
