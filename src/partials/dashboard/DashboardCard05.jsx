@@ -4,7 +4,7 @@ import RealtimeChart from "../../charts/RealtimeChart";
 
 // Import utilities
 import { tailwindConfig, hexToRGB } from "../../utils/Utils";
-import BtnShowCode from "../../components/BtnShowCode";
+import BtnShowCode from "../../components/custom/BtnShowCode";
 import { realTimeChart } from "../../codes/lineCharts";
 
 function DashboardCard05() {

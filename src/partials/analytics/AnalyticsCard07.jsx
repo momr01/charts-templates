@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { topCountries } from "../../codes/barCharts";
-import BtnShowCode from "../../components/BtnShowCode";
+import BtnShowCode from "../../components/custom/BtnShowCode";
 
 function AnalyticsCard07() {
   const [showCode, setShowCode] = useState(false);

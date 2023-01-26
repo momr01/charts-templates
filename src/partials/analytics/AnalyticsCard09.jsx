@@ -1,7 +1,7 @@
 import { useState } from "react";
 import DoughnutChart from "../../charts/DoughnutChart";
 import { doughnutChart } from "../../codes/pieCharts";
-import BtnShowCode from "../../components/BtnShowCode";
+import BtnShowCode from "../../components/custom/BtnShowCode";
 
 // Import utilities
 import { tailwindConfig } from "../../utils/Utils";

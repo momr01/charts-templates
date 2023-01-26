@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import LineChart from '../../charts/LineChart09';
 import { lineChart9 } from '../../codes/lineCharts';
-import BtnShowCode from '../../components/BtnShowCode';
+import BtnShowCode from "../../components/custom/BtnShowCode";
 
 // Import utilities
 import { tailwindConfig } from '../../utils/Utils';

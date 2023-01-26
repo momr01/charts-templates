@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 // Import utilities
 import { tailwindConfig, hexToRGB } from "../../utils/Utils";
-import BtnShowCode from "../../components/BtnShowCode";
+import BtnShowCode from "../../components/custom/BtnShowCode";
 import { lineChart4 } from "../../codes/lineCharts";
 
 function AnalyticsCard02() {

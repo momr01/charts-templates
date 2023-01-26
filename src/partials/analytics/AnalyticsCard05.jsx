@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { topChannels } from "../../codes/barCharts";
-import BtnShowCode from "../../components/BtnShowCode";
+import BtnShowCode from "../../components/custom/BtnShowCode";
 
 function AnalyticsCard05() {
   const [showCode, setShowCode] = useState(false);

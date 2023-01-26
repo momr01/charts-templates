@@ -3,7 +3,7 @@ import BarChart from "../../charts/BarChart02";
 
 // Import utilities
 import { tailwindConfig } from "../../utils/Utils";
-import BtnShowCode from "../../components/BtnShowCode";
+import BtnShowCode from "../../components/custom/BtnShowCode";
 import Tooltip from "../../components/Tooltip";
 import { barChart2 } from "../../codes/barCharts";
 

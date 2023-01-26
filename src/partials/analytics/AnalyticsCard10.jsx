@@ -1,7 +1,7 @@
 import { useState } from "react";
 import PolarChart from "../../charts/PolarChart";
 import { polarChart } from "../../codes/pieCharts";
-import BtnShowCode from "../../components/BtnShowCode";
+import BtnShowCode from "../../components/custom/BtnShowCode";
 
 // Import utilities
 import { tailwindConfig, hexToRGB } from "../../utils/Utils";

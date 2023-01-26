@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import LineChart from "../../charts/LineChart06";
 import { lineChart6 } from "../../codes/lineCharts";
-import BtnShowCode from "../../components/BtnShowCode";
+import BtnShowCode from "../../components/custom/BtnShowCode";
 
 // Import utilities
 import { tailwindConfig, hexToRGB } from "../../utils/Utils";

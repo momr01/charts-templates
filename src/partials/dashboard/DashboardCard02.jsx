@@ -6,7 +6,7 @@ import EditMenu from "../../components/DropdownEditMenu";
 
 // Import utilities
 import { tailwindConfig, hexToRGB } from "../../utils/Utils";
-import BtnShowCode from "../../components/BtnShowCode";
+import BtnShowCode from "../../components/custom/BtnShowCode";
 import { lineChart1 } from "../../codes/lineCharts";
 
 function DashboardCard02() {

@@ -1,7 +1,7 @@
 import { useState } from "react";
 import PieChart from "../../charts/PieChart";
 import { pieChart1 } from "../../codes/pieCharts";
-import BtnShowCode from "../../components/BtnShowCode";
+import BtnShowCode from "../../components/custom/BtnShowCode";
 
 // Import utilities
 import { tailwindConfig } from "../../utils/Utils";
