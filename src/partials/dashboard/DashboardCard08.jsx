@@ -88,12 +88,12 @@ function DashboardCard08() {
     ],
   };
 
-  const [showCode, setShowCode] = useState(false);
+  const [showDashbCard8, setShowDashbCard8] = useState(false);
 
   return (
     <div
       className={`flex flex-col col-span-12 md:col-span-6 bg-white shadow-lg rounded-sm border border-slate-200 ${
-        !showCode && "h-[28rem]"
+        !showDashbCard8 && "h-[28rem]"
       }`}
     >
       <header className="px-5 py-4 border-b border-slate-100 flex items-center">
@@ -107,8 +107,8 @@ function DashboardCard08() {
         <LineChart data={chartData} width={595} height={248} />
 
         <BtnShowCode
-          showCode={showCode}
-          setShowCode={setShowCode}
+          showCode={showDashbCard8}
+          setShowCode={setShowDashbCard8}
           text={lineChart2}
         />
       </div>

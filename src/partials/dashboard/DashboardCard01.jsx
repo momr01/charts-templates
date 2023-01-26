@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import LineChart from "../../charts/LineChart01";
 import Icon from "../../images/icon-01.svg";
