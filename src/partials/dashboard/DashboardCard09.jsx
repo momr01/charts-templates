@@ -1,10 +1,11 @@
-import React from "react";
+import {useState} from "react";
 import BarChart from "../../charts/BarChart02";
 
 // Import utilities
 import { tailwindConfig } from "../../utils/Utils";
 import BtnShowCode from "../../components/BtnShowCode";
 import Tooltip from "../../components/Tooltip";
+import { barChart2 } from "../../codes/barCharts";
 
 function DashboardCard09() {
   const chartData = {
@@ -37,9 +38,12 @@ function DashboardCard09() {
       },
     ],
   };
+  const [showCode, setShowCode] = useState(false);
 
   return (
-    <div className="flex flex-col col-span-full sm:col-span-12 bg-white shadow-lg rounded-sm border border-slate-200">
+    <div className={`flex flex-col col-span-full sm:col-span-12 bg-white shadow-lg rounded-sm border border-slate-200 ${
+      !showCode && ""
+    }`}>
       <header className="px-5 py-4 border-b border-slate-100 flex items-center">
         <h2 className="font-semibold text-slate-800">Sales VS Refunds</h2>
         <Tooltip className="ml-2" size="lg">
@@ -66,11 +70,16 @@ function DashboardCard09() {
       </div>
       {/* Chart built with Chart.js 3 */}
       <div className="p-4">
-        <div className="grow">
+        <div className="grow p-1">
           {/* Change the height attribute to adjust the chart height */}
           <BarChart data={chartData} width={595} height={248} />
         </div>
         {/* <BtnShowCode /> */}
+        <BtnShowCode
+          showCode={showCode}
+          setShowCode={setShowCode}
+          text={barChart2}
+        />
       </div>
     </div>
   );
