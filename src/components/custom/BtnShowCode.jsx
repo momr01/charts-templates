@@ -34,14 +34,6 @@ const BtnShowCode = ({ showCode, setShowCode, text }) => {
 };
 
 const CodeBlock = ({ text }) => {
-  useEffect(() => {
-    console.log("init");
-
-    return () => {
-      console.log("end");
-    };
-  }, []);
-
   return (
     <div className="p-1 text-xs">
       <CopyBlock

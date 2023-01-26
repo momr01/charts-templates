@@ -93,7 +93,7 @@ function DashboardCard08() {
   return (
     <div
       className={`flex flex-col col-span-12 md:col-span-6 bg-white shadow-lg rounded-sm border border-slate-200 ${
-        !showDashbCard8 && "h-[28rem]"
+        !showDashbCard8 && "md:h-[28rem]"
       }`}
     >
       <header className="px-5 py-4 border-b border-slate-100 flex items-center">
