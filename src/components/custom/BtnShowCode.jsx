@@ -15,7 +15,7 @@ import {
   zenburn,
 } from "react-code-blocks";
 import Loading from "./Loading";
-import { motion, AnimatePresence } from "framer-motion";
+//import { motion, AnimatePresence } from "framer-motion";
 
 // const Code = lazy((text) => <CodeBlock text={text} />);
 const CodeBlock = lazy(() => import("../custom/CodeBlock"));
@@ -45,8 +45,8 @@ const BtnShowCode = ({ showCode, setShowCode, text }) => {
       {/* {showCode && <CodeBlock text={text} />} */}
       {showCode && (
         <Suspense fallback={renderLoader()}>
-          <motion.div
-            //   whileInView={{ opacity: 1 }}
+          {/* // <motion.div */}
+          {/* //   whileInView={{ opacity: 1 }}
             //   whileHover={{ scale: 1.1 }}
             //   transition={{ duration: 0.5, type: "tween" }}
             //className="app__profile-item"
@@ -55,14 +55,15 @@ const BtnShowCode = ({ showCode, setShowCode, text }) => {
             //   transition={{ duration: 0.5 }}
             // whileInView={{ opacity: [0, 1] }}
             //  transition={{ duration: 0.9 }}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
+          //  initial={{ opacity: 0 }}
+          //  animate={{ opacity: 1 }}
+         //   exit={{ opacity: 0 }}
 
             //className={`${classNames} app__flex`}
-          >
-            <CodeBlock text={text} />
-          </motion.div>
+        //</Suspense>  > */}
+          <CodeBlock text={text} />
+
+          {/* </motion.div> */}
         </Suspense>
       )}
     </>
