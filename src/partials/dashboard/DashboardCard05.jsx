@@ -116,7 +116,7 @@ function DashboardCard05() {
       </header>
       {/* Chart built with Chart.js 3 */}
       {/* Change the height attribute to adjust the chart height */}
-      <div className="p-1">
+      <div>
         <RealtimeChart data={chartData} width={595} height={248} />
 
         <BtnShowCode

@@ -1,12 +1,26 @@
 import { Tooltip } from "@mui/material";
-import { useState, useEffect, useRef, useCallback } from "react";
+import {
+  useState,
+  useEffect,
+  useRef,
+  useCallback,
+  lazy,
+  Suspense,
+} from "react";
 import {
   a11yLight,
-  CopyBlock,
+  //CopyBlock,
   dracula,
   tomorrow,
   zenburn,
 } from "react-code-blocks";
+import Loading from "./Loading";
+import { motion, AnimatePresence } from "framer-motion";
+
+// const Code = lazy((text) => <CodeBlock text={text} />);
+const CodeBlock = lazy(() => import("../custom/CodeBlock"));
+
+const renderLoader = () => <Loading />;
 
 const BtnShowCode = ({ showCode, setShowCode, text }) => {
   const toggleCode = () => {
@@ -28,34 +42,30 @@ const BtnShowCode = ({ showCode, setShowCode, text }) => {
         </Tooltip>
       </div>
 
-      {showCode && <CodeBlock text={text} />}
-    </>
-  );
-};
+      {/* {showCode && <CodeBlock text={text} />} */}
+      {showCode && (
+        <Suspense fallback={renderLoader()}>
+          <motion.div
+            //   whileInView={{ opacity: 1 }}
+            //   whileHover={{ scale: 1.1 }}
+            //   transition={{ duration: 0.5, type: "tween" }}
+            //className="app__profile-item"
+            //key={about.title + index}
+            //   whileInView={{ y: [100, 50, 0], opacity: [0, 0, 1] }}
+            //   transition={{ duration: 0.5 }}
+            // whileInView={{ opacity: [0, 1] }}
+            //  transition={{ duration: 0.9 }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
 
-const CodeBlock = ({ text }) => {
-  return (
-    <div className="p-1 text-xs">
-      <CopyBlock
-        language="jsx"
-        text={text}
-        showLineNumbers={true}
-        theme={dracula}
-        //theme={zenburn}
-        //theme={a11yLight}
-        // theme={a11yDark}
-        //theme={github}
-        //theme={paraisoDark}
-        //theme={paraisoLight}
-        //theme={tomorrow}
-        //theme={shadesOfPurple}
-        wrapLines={true}
-        codeBlock
-        //highlight="11-16"
-        //onCopy={copyCode}
-        //onClick={copyCode}
-      />
-    </div>
+            //className={`${classNames} app__flex`}
+          >
+            <CodeBlock text={text} />
+          </motion.div>
+        </Suspense>
+      )}
+    </>
   );
 };
 

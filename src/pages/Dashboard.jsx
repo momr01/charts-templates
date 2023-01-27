@@ -34,7 +34,10 @@ import {
   FintechCard13,
   FintechCard14,
 } from "../partials/fintech";
-import ChartSection from "../components/custom/ChartSection";
+import { lazy, Suspense } from "react";
+import Loading from "../components/custom/Loading";
+// import ChartSection from "../components/custom/ChartSection";
+//import { charts } from "../data/chartsData";
 
 const charts = [
   {
@@ -221,6 +224,10 @@ const charts = [
   },
 ];
 
+const ChartSection = lazy(() => import("../components/custom/ChartSection"));
+
+const renderLoader = () => <Loading />;
+
 function Dashboard() {
   return (
     <div className="flex h-screen overflow-hidden">
@@ -229,7 +236,9 @@ function Dashboard() {
           <div className="px-4 sm:px-6 lg:px-20 py-8 w-full max-w-9xl mx-auto">
             <WelcomeBanner />
             {charts.map((chart) => (
-              <ChartSection chart={chart} key={chart.id} />
+              <Suspense key={chart.id} fallback={renderLoader()}>
+                <ChartSection chart={chart} />
+              </Suspense>
             ))}
           </div>
         </main>

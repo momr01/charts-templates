@@ -10,6 +10,7 @@ import BtnShowCode from "../../components/custom/BtnShowCode";
 import { lineChart1 } from "../../codes/lineCharts";
 
 function DashboardCard01() {
+
   const chartData = {
     labels: [
       "12-01-2020",
@@ -80,7 +81,7 @@ function DashboardCard01() {
   return (
     <div
       className={`flex flex-col col-span-full sm:col-span-6 xl:col-span-4 bg-white shadow-lg rounded-sm border border-slate-200 ${
-        !showCode && "xl:h-[24rem]"
+        !showCode && "sm:h-[24rem]"
       }`}
     >
       <div className="px-5 pt-5">
@@ -127,7 +128,7 @@ function DashboardCard01() {
         </div>
       </div>
       {/* Chart built with Chart.js 3 */}
-      <div className="p-1">
+      <div>
         <div className="grow">
           {/* Change the height attribute to adjust the chart height */}
           <LineChart data={chartData} width={389} height={128} />

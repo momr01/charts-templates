@@ -69,8 +69,8 @@ function DashboardCard09() {
         </div>
       </div>
       {/* Chart built with Chart.js 3 */}
-      <div className="p-4">
-        <div className="grow p-1">
+      <div>
+        <div className="grow">
           {/* Change the height attribute to adjust the chart height */}
           <BarChart data={chartData} width={595} height={248} />
         </div>
